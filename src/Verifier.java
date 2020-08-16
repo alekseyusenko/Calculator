@@ -14,11 +14,11 @@ class Verifier {
     }
 
     public static boolean isOperator(String str) {
-        char[] operators = {'+', '-', '*', '/', ':'};
-        char ch = str.charAt(0);
-        boolean result = true;
-        for (char check: operators) {
-            if (ch == check) {
+        String[] operators = {"+", "-", "*", "/", ":"};
+
+        boolean result = false;
+        for (String check: operators) {
+            if (str.equals(check)) {
                 result = true;
                 break;
             }
@@ -37,7 +37,7 @@ class Verifier {
 
         try {
             if (inputArr.length != 3) {
-                throw new Exception("Для нормальной работы программы нужно ввести два операнда и один оператор. Попробуйте ещё раз.");
+                throw new Exception("Для нормальной работы программы нужно ввести два операнда и один оператор через пробел. Попробуйте ещё раз.");
             }
             if (!isOperator(inputArr[1])) throw new Exception("Введён неправильный оператор. Попробуйте ещё раз.");
 
